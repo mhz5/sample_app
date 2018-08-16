@@ -12,5 +12,9 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get contact_path
     assert_select "title", page_title("Contact")
 
+    get signup_path
+    assert_response :success
+    assert_template 'users/new'
+    assert_select "title", page_title("Sign Up")
   end
 end

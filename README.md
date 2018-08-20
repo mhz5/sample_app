@@ -37,5 +37,16 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
+## Heroku Instructions
+Push to Heroku:
+```
+$ git push heroku master
+```
+
+Migrate prod db on heroku:
+```
+$ heroku run rails db:migrate
+```
+
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).

@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<table>
+  <%
+    user_hash = {
+      Name: @user.name,
+      Email: @user.email,
+      "Created At": @user.created_at,
+      "Updated At": @user.updated_at,
+    }
+  %>
+  <%  user_hash.each do |field, val| %>
+    <tr>
+      <td><b><%= field %>: </b></td>
+      <td><%= val %></td>
+    </tr>
+  <% end %>
+</table>
